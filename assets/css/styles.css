@@ -269,3 +269,9 @@ body {
 .tab-content.active { display: block; }
 .jpg-preview img { display: block; box-shadow: 0 6px 18px rgba(2,6,23,0.6); }
 
+.jpg-preview { position: relative; }
+.preview-actions { position: absolute; top: 0.6rem; right: 0.6rem; z-index: 5; }
+.preview-actions .button { padding: 0.45rem; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; }
+.preview-actions .button svg { width: 18px; height: 18px; }
+.preview-actions .button.download-icon { background: #38BDF8; color: #0f172a; border: none; }
+
