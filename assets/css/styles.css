@@ -225,3 +225,20 @@ body {
 	vertical-align: -0.125em;
 }
 
+/* PDF preview styles */
+.pdf-preview p {
+	color: var(--muted);
+}
+.pdf-preview .viewer {
+	margin-top: 1rem;
+	background: rgba(255,255,255,0.02);
+	border: 1px solid rgba(148, 163, 184, 0.08);
+	border-radius: 12px;
+	overflow: hidden;
+}
+.pdf-preview .viewer .fallback {
+	padding: 1rem;
+	color: var(--muted);
+	text-align: center;
+}
+
