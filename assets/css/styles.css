@@ -261,7 +261,7 @@ body {
 	font-weight: 600;
 }
 .tab-btn.active {
-	background: linear-gradient(90deg, var(--accent), var(--accent-2));
+	background: #38BDF8;
 	color: #0f172a;
 	border-color: transparent;
 }
