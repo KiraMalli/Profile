@@ -23,10 +23,26 @@
   <main class="content container">
     <section>
       <h2>Comp Card</h2>
-      <div class="pdf-preview">
-        <div class="viewer">
-          <embed src="assets/pdfs/comp-card.pdf" type="application/pdf" width="100%" height="700px" />
-          <p class="fallback">If the preview doesn't load, <a href="assets/pdfs/comp-card.pdf" target="_blank" rel="noopener" style="color: #38BDF8;">download the PDF</a>.</p>
+      <div class="tabs">
+        <div class="tab-buttons" role="tablist" aria-label="Comp card formats">
+          <button class="tab-btn active" data-tab="jpg" role="tab" aria-selected="true">JPG</button>
+          <button class="tab-btn" data-tab="pdf" role="tab" aria-selected="false">PDF</button>
+        </div>
+
+        <div class="tab-content active" id="jpg" role="tabpanel">
+          <div class="jpg-preview">
+            <img src="assets/images/comp-card.jpg" alt="Comp Card JPG" style="max-width:100%;height:auto;border-radius:8px;" />
+            <p class="fallback">If the image doesn't load, <a href="assets/images/comp-card.jpg" target="_blank" rel="noopener" style="color: #38BDF8;">open the image</a>.</p>
+          </div>
+        </div>
+
+        <div class="tab-content" id="pdf" role="tabpanel" aria-hidden="true">
+          <div class="pdf-preview">
+            <div class="viewer">
+              <embed src="assets/pdfs/comp-card.pdf" type="application/pdf" width="100%" height="700px" />
+              <p class="fallback">If the preview doesn't load, <a href="assets/pdfs/comp-card.pdf" target="_blank" rel="noopener" style="color: #38BDF8;">download the PDF</a>.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -38,6 +54,24 @@
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const buttons = document.querySelectorAll('.tab-btn');
+      const contents = document.querySelectorAll('.tab-content');
+      buttons.forEach(btn => btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        buttons.forEach(b => {
+          b.classList.toggle('active', b === btn);
+          b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+        });
+        contents.forEach(c => {
+          const isActive = c.id === tab;
+          c.classList.toggle('active', isActive);
+          c.setAttribute('aria-hidden', !isActive);
+        });
+      }));
+    });
+  </script>
 </body>
 </html>
 
