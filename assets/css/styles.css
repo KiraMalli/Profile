@@ -91,6 +91,14 @@ body {
 	flex: 1;
 }
 
+@media (max-width: 600px) {
+
+	.hero-sub {
+		flex-direction: column;
+	}
+
+}
+
 .profile-pic {
   width: 100%;
   max-width: 250px;
